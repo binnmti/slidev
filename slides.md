@@ -35,6 +35,17 @@ h1 {
 
 ---
 
+# 自己紹介
+
+- 👨 松井 敏(まつい びん)
+- 👜 Codeer プログラマ(本業) & HACARUS C#&CI/CD メンター(副業)
+- 🏆 Microsoft MVP for Developer Technologies 2012-2024
+- 📚 Unity5 3Dゲーム開発講座 ユニティちゃんで作る本格アクションゲーム
+- 💻 C#読書会主催、Greek Alphabet Software Academy TA
+- ❤️ プログラム、マンガ、料理、睡眠、妻&子供
+
+---
+
 # 本日のプレゼン資料
 
 - 全く本質的でない話ですが、今回のプレゼン資料は[Slidev](https://sli.dev/)で作っています。

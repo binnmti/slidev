@@ -13,6 +13,7 @@ components.d.ts
 composable-vue-cn
 dist
 dist-ssr
+docs
 docs/.vitepress/@slidev
 docs/.vitepress/cache
 node_modules
