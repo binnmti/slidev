@@ -27,7 +27,7 @@ h1 {
 }
 </style>
 
-# C#でC#コンパイラを作っている話
+# キャリアブレイク中の自己学習でのAIの使い方
 
 ## 松井 敏
 
@@ -47,455 +47,257 @@ h1 {
 
 # キャリアブレイク
 
-- 松井は現在働いていない
-- 少し長めの休みを取って日々勉強をしている
-- 勉強している内容
-  - アルゴリズム
-  - コンピューターサイエンス
-  - **コンパイラ作成**
+- どんな生活をしているか
+  - 勉強（アルゴリズム、コンピューターサイエンス、コンパイラ作成、英語、栄養学、仏教）
+  - 読書（技術書、英語、仏教、料理）
+  - 個人開発
+  - 息子教育（算数、自転車）
+  - 健康（睡眠、食事、運動などライフスタイルの見直し）
+  - お金（節約、家計簿、税金関係）
+  - コミュニティ主催月2回、コミュニティTA月1回、コミュニティ会議月1回、副業月2回、面談月1回
+  - 週1回ぐらいは呑んでるかも？ 1 on 1が増えた
+  - TVを殆ど見なくなった。マンガも読まなくったが、徐々に再開している。
+
+---
+
+# 月毎
+
+<style>
+.compact-table table {
+  font-size: 1em;
+  width: 100%;
+}
+.compact-table th, .compact-table td {
+  padding: 4px 6px;
+}
+</style>
+
+<div class="compact-table">
+
+| 月 | 主な活動 | 備考 |
+|----------------|--------|--------|
+| 9月 | 仕事 | 9/20 最終出社日 |
+| 10月 | 無計画 | とにかく遊ぶ |
+| 11月 | 勉強 | 11/20 退職日 |
+| 12月 | 勉強 | キャリアブレイクアドベントカレンダー / 親子マラソン 5km |
+| 1月 | 勉強 | - |
+| 2月 | 勉強 | フルマラソン / 地方ワーキング1週間 |
+| 3月 | 勉強 | 地方ワーキング1週間 / 息子春休み |
+| 4月 | 勉強 | コワーキングスペース / お弁当 |
+| 5月 | 就活 + 勉強 |  |
+| 6月 | 就職？ | - |
+
+</div>
+
+---
+
+# 時間割
+
+<style>
+.compact-table table {
+  font-size: 0.6em;
+  width: 100%;
+}
+.compact-table th, .compact-table td {
+  padding: 4px 6px;
+}
+</style>
+
+<div class="compact-table">
+
+| 時間 | やること | 月 | 火 | 水 | 木 | 金 |
+|----------------|--------|--------|--------|--------|--------|--------|
+| 5:30 - 6:00 | 起床　| | | | | |
+| 6:00 - 6:30 | 朝読書| | | | | |
+| 6:30 - 7:00 | 朝食 | | | | | |
+| 7:00 - 8:30 | 運動 | | | | | |
+| 9:00 - 10:00 | 朝勉強| アルゴリズム | アルゴリズム | アルゴリズム | アルゴリズム | アルゴリズム |
+| 10:00 - 11:00 | 朝勉強| CS | CS | CS | CS | CS |
+| 11:00 - 12:00 | 朝勉強| コンパイラ | コンパイラ | コンパイラ | コンパイラ | コンパイラ |
+| 12:00 - 13:00 | 昼食 | | | | | |
+| 13:00 - 14:00 | 昼勉強| 英語 | 英語 | 英語 | 英語 | 英語 |
+| 14:00 - 15:00 | 昼勉強| 仏教 | 栄養学 | 仏教 | 栄養学 | 自由研究 |
+| 15:00 - 16:00 | 息子| 自転車・算数 | | 自転車・算数 | | |
+| 16:00 - 17:00 | 昼勉強| 開発 | 開発 | 開発 | 開発 | 開発 |
+| 17:00 - 18:00 | 夕飯準備| | | | | |
+| 18:00 - 19:00 | 夕飯| | | | | |
+| 21:30 - 22:00 | 夜読書| | | | | |
+| 22:00 - 22:30 | 自由| | | | | |
+| 22:30 - 5:30 | 就寝 | | | | | |
+
+</div>
+
+---
+
+# 勉強
+
+  - アルゴリズム(37/150)
+  - コンピューターサイエンス(8/10)
+  - コンパイラ（目標達成）
+    - 機械学習（新規）
   - 英語
-  - 宗教
-  - 栄養学
-- その中でも今日はコンパイラ作成をピックアップ
+  - 栄養学（実践にスライド）
+  - 仏教
+  - 自由研究（自然消滅）
 
 ---
 
-# 何故、コンパイラを作ろうと思ったか
+# 始めた時のAIの前提
 
-- 以前は低レイヤープログラミングを重要視していなかった
-- Greek Alphabet Software Academyは低レイヤーの内容をかなり重要視している
-- アルゴリズムは完全に、Alphaがきっかけではじめた
-- それ以外でも少しずつ低レイヤーに興味を持つようになっていた
-
----
-
-# コンパイラ作成の話を聞いて出来るかもと感じた
-
-- たまたまポッドキャストでコンパイラの話を聞いた
-  - [30. セルフホストできるCコンパイラの作り方を夏休みの特別授業で教えた話](https://turingcomplete.fm/30)
-- これを聞いたきっかけは自分でもちょっと謎で、、知らない人だし、1話でもないし、その時はコンパイラも興味がなかった
-- なんとなく自分でも作れるかもと思ってサイトを見に行った
-  - [低レイヤを知りたい人のためのCコンパイラ作成入門](https://www.sigbus.info/compilerbook)
-- 流し見して、これはキャリアブレイク中の勉強課題にしようとすぐに思った
+- 仕事を辞めた時点、約半年前では、まだAIにコードを書いてもらうレベルでは全くなかった
+- 関数や変数などの名前を考えてもらうのはとても便利だなと思ったぐらい
+- 個人開発で一度コード書かせる実験をしたが、全然駄目
+- 無料版のChatGPTに質問したり、絵を書いたてもらったり
+- **ちょっと面白いおもちゃ**という理解と使い方
 
 ---
 
-# 実際に読んでみる
+# きっかけの一つ
 
-- 最初の２ケ月ぐらいは1日1時間、1ヶ月15日ぐらいのペースでただ読んでいた
-- 当たり前だけど、読んだだけでは把握出来ないことも沢山ある
-- 一応wslでLinux環境も構築して、書かれている事はプログラムにしたりもした。写経。
-- 特に再帰下降構文解析の話ぐらいから理解があやふやになってきた
-  - 木構造
-  - BNF（Backus–Naur form）と、それを拡張したEBNF（Extended BNF）
-  - スタックマシン
-- 特にEBNFをCに落としていくところはかなり怪しかった。。
-
-```
-expr    = mul ("+" mul | "-" mul)*
-mul     = primary ("*" primary | "/" primary)*
-primary = num | "(" expr ")"
-```
+- 休みだした9月末に選挙があった
+- 正直、自分は、そんなことに時間を使うのは無駄だと思っていた
+- 諦めている部分も多いし、どうせ変わらないという思いが強かったし、他人とも話さなかった
+- でも、時間もあったので、今までよりはずっと情報を集めた
+- そんな中でふとChatGPTと会話してみた
+- とても常識的で、建設的な意見でビックリした
 
 ---
 
-# 理解出来ないことを積んでもますます理解出来ない悪循環
+# 使っているAI
 
-- 再帰下降構文解析から先は実際にEBNFをCに変換していくのが基本作業
-- ベースの理解が怪しいので、当然どんどん難しくなっていく
-- 高校の数学や英語の授業で躓くのは、実は中学の基礎から躓いていましたみたいな話？
-- ステップ12に「ここからの章は正直まだ公開するレベルには達していないと思います。」と書いてある
-- 一旦読むのはここまでとした
-- 正直読んだだけではコンパイラが作れるレベルでの理解は全く出来てない
+- ChatGPT 4（無料）
+- Claude 3.7（課金）
+- Github Copilot（特典）
+- CodeRabbit（無料）
+- (Perplexity)（無料）
+- (Microsoft Copilot)（無料）
 
----
-
-# Cコンパイラにモチベーションが上がらない
-
-- またCコンパイラを作るという課題にもwsl+Visual Studio Codeの環境にも全くモチベーションが上がってなかった
-- そこで、どうせなら楽しい方が良いだろうと思い、当初からC#コンパイラに出来ないかと思っていたので、そちらに舵を切ることにした
-- この際、wslも全部止めてC# + Visual Studioで開発するようにしようと思った
-- とはいえC#をアセンブリに変換するのに何をすらばよいのか全く分からない
+- 個人的には課金が最高に上手いのはClaude
 
 ---
 
-# 自分のアセンブラ経験
+# アルゴリズム
 
-- 自分はゲーム開発でもアセンブラはほぼほぼ未経験。
-- ファーストキャリアからC言語だし、専門学校はBASIC→Cだった。
-- ちょうどC++になりだした黎明期。GBAで当時使っているタイトルはほぼなかった記憶。
-- なのでアセンブラはほぼ読めない
-- C#では確かILというキーワードを聞くなぐらいの把握度
-
----
-
-# C#コンパイラを作りたい
-
-- 先ずはILの言語仕様を確認しようとした
-- ECMA-335に[CLIの仕様](https://www.ecma-international.org/wp-content/uploads/ECMA-335_6th_edition_june_2012.pdf)が書いてあるので読んでみて大きく挫けた
-- SharpLabで```Console.WriteLine(42);```だけ書いたのが、[65行のIL](https://sharplab.io/#v2:C4LglgNgNAJiDUAfAAgJgIwFgBQOwDtgBTAJ3wEMIACNKgQRwG8crWb0A2GgFioFlyBABQBKFm2bY209gE4h3VCIDc41gF8cm7EA)になったのもちょっと引いた
-- でもChatGPTが簡単な加算プログラムを教えてくれた。これがなかったら多分やってなかった。
-- 先ずはこれを出力するところから始めた
-
-
-```
-.assembly AddExample {}
-.method static void Main() cil managed {
-    .entrypoint
-    ldc.i4 10         // スタックに10をプッシュ
-    ldc.i4 20         // スタックに20をプッシュ
-    add               // スタック上の2つの値を加算
-    call void [mscorlib]System.Console::WriteLine(int32)
-    ret
-}
-```
+- NeetCode(LeetCodeではなく)で1日1時間問題を解いている
+- なるべく最速計算量まで把握出来るようにしている
+- 解ければ1日数問だが、どちらかというと数日で1問の方が多い
+- アルゴリズムに関してAIは物凄く賢く、かなり早い段階から模範解答を出してくれていた
+- 特にGithub Copilotの予測は凄くて、関数名だけで解答することもある
+- スルーしても、改行するごとに新しい解決法をバンバン提案してくる。自分が考えるよりも早く答えが見えてしまう。
+- というわけで、アルゴリズムに関しては**徹底的にAIを排除している**
+- 自分はコードはIDEで書くのが一番好きで、それ以外で書くことはないが、今回はサイトのエディタで直接書いている
+- インテリセンスもないし、エラーかわらかない。メソッド名やネームスペースなど覚えていないもの多い
+- これは逆に学ぶこともあった
+- 唯一計算量に関してはコードを丸ごと貼ってAIに聞くこともある。但し、特に空間計算量は間違えることも多い
 
 ---
 
-# 生成系AIってどうなっているのかな？
+# コンピュータサイエンス
 
-- 因みに同様の情報はググっても見つけられず。本当にChatGPT様様。。
-- この辺生成系AIってどうなっているんだろう。。
-- 内容によってはググっても全然情報が出ない時は、ChatGPTも全然見当違いのことを言うことがあるので。。
-
----
-
-# テスト
-
-- というわけで数字を書いたらそれがILにする最初の仕組みを作った
-- ただし、これだけだとこれが正しくILかをチェックする術がなかった。
-- つまりILをビルドしてコンパイルエラー？する仕組みってないの？
-- あとILをexeにするのってどうしたら良いんだ？？ってなった
-- Ilasm.exe (IL アセンブラー)を使えばILが実行ファイルになることが分かった
-- 実行したら数字が出るので、これでテストが書けるようになった
-- 自分で書いたC#（のような）プログラム("42")→自分で書いたIL→実行した結果("42")
-```
-.assembly AddExample { }
-.method static int32 main() cil managed {
-    .entrypoint
-    ldc.i4 42
-    ret
-}
-```
-- というわけでC#でC#コンパイラを作ろうとした
+- ハーバードのCSの授業を1日1時間見る。全てに日本語訳もついている
+- IDEも用意されていて、独自ライブラリも豊富
+- お金を出せば、資格も取れるみたい。
+- 知識取得を優先して、問題提出はしていない
+- 特に最初の内は、聞きながら気になるところを自分用Discordにメモしていた
+- 最近は写経が中心であまりメモをしない
+- これに関しても**AIは全く使っていない**。これはCSの授業の進め方が素晴らしいため**AIは必要ない**が正解
+- 前提知識もいらず、初見の単語には詳しい解説が付くため、初学者でも低年齢でも理解出来る
+- 全ての授業がステップバイステップの延長線上なので、補足などが必要ない
+- ただただ良質なコンテンツに感謝してひたすら聞くべし
 
 ---
 
-# 楽しい
+# コンパイラ作成
 
-- このあたりからめちゃ楽しくなってきた
-- 勉強の中でもコンパイラは、かなりモチベーションは低めだったがいきなり一番楽しくなった
-- 今まで読んでいただけの理解度がうなぎ上りに上がっていった
-- 本当に楽しくてしょうがなくて1時間で止めるのもちょっとずつ伸びていった
-
----
-
-# 再び再帰下降構文解析
-
-- やっぱり再帰下降構文解析が一番難しかった
-- 多分誰がやってもここが最初の山。
-- ギターのFコードみたいなもので、きっとココが死屍累々
-- ココを超えると結構あとは延長線上に思える
-
+- コンパイラの入門テキストを1日1時間読みながらC(のような独自言語)→アセンブリ出力を理解する
+- とても分かりやすいテキストで、かつステップバイステップで進んでいく
+- ではあるけれど、前提知識は必要で、理解が難しい高度な内容も出てくる
+- 最初の2ケ月はひたすら読んで写経
+- 一区切りついてからは、コンパイラを作成にあたって独自路線に変更。
+- C#でC#コンパイラ(MSIL)を作る
+- 今回**AIをもっとも重宝した**のが、このコンパイラ作成
+- ILに関して日本語で情報を探しても殆ど出ない。
+- これをAIがステップバイステップで教えてくれた。独自で出力されたILコードのエラーチェックはツールもないが、これも教えてくれる
+- もしAIがなかったら、確実に詰んでいた。
+- AIとGoogle検索との最大の違いは世界の知見が日本語でも手に入ることかも
 
 ---
 
-# ILは中間
+# 英語
 
-- 再帰下降構文解析が出来てアセンブラを出力して徐々にCコンパイラから差分も出てくる
-- この辺でILって実はとても簡単に使えるアセンブラなんじゃないかなと思いだす
-- ILは中間アセンブラなので、実際に制限が少なく、汎用的に使いやすくなっている（と思う）
-- なので、思っていたよりシンプルに書けることが増えてきた
-
----
-
-# エラーチェック
-
-- シンプルに書けるとは言え、実装が増えてくると当然つまることもある
-- テストが失敗した場合エラーを追うのが少しずつ難しくなった
-- 構文解析のエラーは難しくてもVisual Studioでデバッグ出来る
-- アセンブラとしては出力出来ているが、それが間違っている時が問題
-- Ilasm.exeでエラーは分かるが、Visual Studioのようにエラー箇所を教えてくれない
-
+- スタディサプリ、3行英語日記、LeetCodeは翻訳しない、.NETの解説サイトや解説動画、多読本
+- 最近は毎日アンダースヘルスバークの動画を見続けているｗ
+- AIは、3行英語日記の添削
+- ChatGPTとの英会話も試してみたけれど、初心者には厳しい
+- Googleレンズで、多読本の翻訳
+- 正直まだ英語学習も、AI活用も決定版がないので、これは活用事例を知りたいぐらい
+- 動画の自動翻訳のレベルもダダ上がりで凄い。
 
 ---
 
-# 3種の神器
+# 仏教
 
-- これは３つの道具がとても役に立った。
-- 一つは自分で書いたコードをリアルタイムにアセンブラで表示してくれる[sharplab](https://sharplab.io/)
-  - C#もILも選べるのはマジで便利だった。
-- ChatGPT。コードをアセンブラにした結果を投げて、あっているか聞くと教えてくれる
-  - 対話式ビルドエラーみたいな感じで重宝した
-- 最後の一つは自分で書いたコードをリアルタイムにアセンブラで表示してくれる仕組み
-  - 最初はコマンドラインツールとテストだけだった
-  - アセンブラにするところ迄をDLLにして、Blazorからも呼べるようにした
-  - 書いたコードがリアルタイムでアセンブラになるのは超便利
-  - 人にも見せやすいというメリットもあった
-- この文章を書いている時に[peverify](https://learn.microsoft.com/ja-jp/dotnet/framework/tools/peverify-exe-peverify-tool) なるものを知った。
-
----
-
-# Blazor DEMO
-
-- Github:[ChibiCSharp](https://github.com/binnmti/ChibiCSharp)
-- サイト:[BlazorChibiCSharp](https://blazorchibicsharp.azurewebsites.net/)
-- 現状出来ること:比較演算、変数、if,while,for,関数が実装済み
-- 少しだけUI/UXも拘って誰でも扱えるものとしていった
+- 自分が今まで一度も触れたことのないジャンルも何か一つ勉強したかった
+- 候補に上げたのは心理学、哲学、漢詩、とか色々あったけれど、結局仏教にした
+- きっかけの一つは本屋で、仏教コーナーに行ったらその数が多い事。そして端っこにあった仏典。1冊1万円以上する本が数百冊あり、内容は全部漢文。これが衝撃だった。
+- ただ何から始めたら良いかも分からなかったし、あまり特定の思想にも染まりたくなかった
+- そこで、軽く本を読んだり、サイトを調べたり、動画を見たりはしてからはとにかく**ChatGPTと対話**しまくった。
+- 特にテーマは決めず、思ったことを聞く。その答えからまた新しい疑問が生まれる。この繰り返しで1時間経つことも増えた。
+- 大きな疑問として、仏陀は神について殆ど触れていない。でも東寺に数多くの人ならざる仏像がある。
+- この答えの種が大乗仏教にありそうなので、そこを中心に、さらに本を読んだり対話を増やしたりした
+- 神という考え方が特に疑問で、そこから他宗教や原始宗教、人は何故神を信じるのかという哲学的な話にも広がっている
+- このAIとの対話は、例えば去年では出来なかった事だと思う
 
 ---
 
-# で、現状
+# 個人開発
 
-- ポインタや&記号などもC#は使わない。
-- sizeofも仕様が違う。
-- 本の内容とも大分ズレが出てきた。
-- せめて型定義がしたくなった
-- と思ったら型定義は結構大変で、特に型不一致などのエラー対応が必要になってきた
-- そもそもmainでstringを返すことが出来ない。。
-- ちょっと次の方向性を迷い中。。
+- Visual StudioでGithub Copilotを使って開発
+- CodeRabbitを使ってコードレビュー（Github Copilotも）
+- たまにClaudeに聞いたりすることもある
+- 最近は作りたい機能を投げればコードを書いてくれてそれが50%以上の精度で動く
+- AIコードは未熟な事もあるが、自分よりも優れている点もあるので学ぶ点も多い
+- 今まで同じ状況で他の人が書いたコードを見る機会はなかったので斬新
+- C#は全てチェックするが、理解度が低いTypeScriptに当たっては、そのまま使うこともある
+- 自分は**AIとの開発は過去一プログラムが楽しい**
+- モノ作りは、何処まで行っても面倒くさい作業。それがかなり軽減されて面白い部分に集中出来ている
+- 個人的にはプログラマとしてコードを書くのは最後のタイミングかもとも思う
 
----
-
-# で、今後
-
-- IL→exe自作
-  - ま、ILasm.exeがあるし。。
-- セルフホスト
-  - 既に完璧な環境があるのに？
-- 独自言語
-  - 既に完璧な言語があるのに？
-- デバッグ環境構築
-  - これは若干だけ興味なくもない
-- ま、他のことやるかな。。
 
 ---
 
 # まとめ
 
-- コンパイラ作りは最初は簡単だが、徐々に理解が難しくなった
-- 再帰下降構文解析がハードル
-- 自分にあった環境でやらないとモチベーションは保てない
-- 実際に作りだしたらめちゃ楽しくなった
-- 車輪の再発明も悪くない
-- プログラムの理解度はワンステップ上がった感じ
-- 色々発展していく方向性はありそう
+- 優れたカリキュラムの授業であれば、特にAIはいらないかも
+- ただし、前提知識が必要だったり、内容が難解な場合はかなりサポートしてもらえる
+- 逆に答えを言いすぎることはあるが、そこもプロンプトでコントロール出来るかも
+- AIと対話という学び方は今この時ならでは
+- 開発に使うのは、本当に楽しい。仕事で使えるレベルかは僕はまだ分からないが時間の問題
+- もしAIがなかったら、少なくともコンパイラ作成は途中で挫折しただろうし、仏教は本だけで今のような広がりは得られなかった思うし、もっと開発には時間が掛かっていたと思う。
+- 今この期間にキャリアブレイクを取って勉強したのは本当に正解だったと思う。
 
 ---
 
-# オマケ
+# 個人的なAIへの見解
+
+- 一方で僕はプログラムがアイデンティティに近いものであり、プログラミングがライフワークになっている人間。
+- 今AIと付き合うのはとても難しい時期だと個人的には思う。
+- AIの方が圧倒的に優れた状態になれば、ひたすら従うだけでよくなるので楽。
+- でも、現状のAIは自分より劣っていることもあれば、自分よりも優れたこともある。
+- 昨日までAIが劣っていることが、今日追いにくことすらある。
+- 朝令暮改どころか、状況によっては、前回と今回で違うこともあるかもしれない。
+- 昨日までの後輩が、今日上司になり、明日には、首を迫られるかもしれない。
+- 常識や価値観が、かつて人類が経験したことがない速度で書き換えられる可能性も高い
+- その進化は間違いなく人間より早く、それを相手にするのはかなりメンタルにもダメージがあると思う
+- 個人的には、AIと人間の付き合い方による、新しい問題や病気なんかも出てくると思う
 
 ---
 
-# IL → JIT Asm → exe
+# 宣伝
 
-- C#がILにはなったけれど、実行ファイルはiLasm.exe任せ。ココの仕組みはもうちょい知りたい。
-- 最初はILをJIT Asmにするには？
-- 今までの必要最低限ILだとJIT Asm にはならない。
-- C#のルールであるclassで囲って、やれば一応出来た。
-- ただ、JIT Asmからexeには出来ないと気づいた。
-- ILをilasmでexeには出来る(IL→exe)
-- そもそもVisual StudioもC#をJIT Asmにはしていないじゃんと。(C#→(IL)→exe)
-- test.asmを書いて、nasmを使ってlink.exeすればexeになるらしいが。。。(ASM→exe)
+- 個人開発について
+  - 5/10(土) [Global Azure 2025 @ Kansai](https://tfsug.connpass.com/event/348543/)
 
----
-
-# IL → exe
-
-- System.Reflectionを使う(これは特にしたい事ではなかった)
-```cs
-using System;
-using System.Reflection;
-using System.Reflection.Emit;
-
-class Program
-{
-    static void Main()
-    {
-        AssemblyName asmName = new AssemblyName("TestExe");
-        AssemblyBuilder asmBuilder = AssemblyBuilder.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.Save);
-        ModuleBuilder modBuilder = asmBuilder.DefineDynamicModule("TestExe", "TestExe.exe");
-        TypeBuilder typeBuilder = modBuilder.DefineType("Program", TypeAttributes.Public);
-        MethodBuilder methodBuilder = typeBuilder.DefineMethod("Main", MethodAttributes.Public | MethodAttributes.Static, typeof(void), Type.EmptyTypes);
-
-        ILGenerator il = methodBuilder.GetILGenerator();
-        il.Emit(OpCodes.Ldc_I4_1);
-        il.Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { typeof(int) }));
-        il.Emit(OpCodes.Ret);
-
-        typeBuilder.CreateType();
-        asmBuilder.SetEntryPoint(methodBuilder);
-        asmBuilder.Save("TestExe.exe");
-    }
-}
-```
-
----
-
-# IL → exe
-
-- バイナリを出力する(これかな。。)
-```cs
-using System;
-using System.IO;
-
-class Program
-{
-    static void Main()
-    {
-        byte[] peBytes = new byte[]
-        {
-            0x4D, 0x5A, 0x90, 0x00, 0x03, 0x00, 0x00, 0x00,  // MZ ヘッダー
-            0x04, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00,
-            0xB8, 0x01, 0x00, 0x00, 0x00, 0xC3              // return 1; に相当する x86 アセンブリ
-        };
-
-        File.WriteAllBytes("SimpleReturn.exe", peBytes);
-
-        Console.WriteLine("SimpleReturn.exe を作成しました。");
-    }
-}
-```
-
----
-
-- 対応表[List of CIL instructions](https://en.wikipedia.org/wiki/List_of_CIL_instructions)は、オペコードからやればできるはず。
-
-| Opcode | Instruction | Description | Type of instruction |
-|--------|-------------|-------------|---------------------|
-| 0x58 | add | Add two values, returning a new value. | Base instruction |
-| 0x38 | br <int32 (target)> | Branch to target. | Base instruction |
-| 0x2B | br.s <int8 (target)> | Branch to target, short form. | Base instruction |
-| 0x20 | ldc.i4 <int32 (num)> | Push num of type int32 onto the stack as int32. | Base instruction |
-| 0x16 | ldc.i4.0 | Push 0 onto the stack as int32. | Base instruction |
-
-- でも、実行してみると、、、
-
-```
----------------------------
-サポートされていない 16 ビット アプリケーション
----------------------------
-64 ビット バージョンの Windows での非互換性のため、プログラムまたは機能である "\??\C:\Users\BinMa\source\repos\test\ConsoleApp1\ConsoleApp1\bin\Debug\net9.0\SimpleReturn.exe" を開始または実行できません。ソフトウェア製造元に問い合わせて 64 ビット Windows 互換バージョンが利用可能であるかどうか確認してください。
-
-```
-
----
-
-- 16 ビット アプリケーションではなくなったが、実行出来ない。
-- このアプリはお使いのPCでは起動できません。
-
-```
-using var fs = new FileStream("SimpleReturn.exe", FileMode.Create, FileAccess.Write);
-using var bw = new BinaryWriter(fs);
-
-// DOSヘッダー
-byte[] dosHeader = {
-            0x4D, 0x5A, 0x90, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00,
-            0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00
-        };
-bw.Write(dosHeader);
-
-// DOSスタブ メッセージ
-byte[] dosStub = {
-            0x0E, 0x1F, 0xBA, 0x0E, 0x00, 0xB4, 0x09, 0xCD, 0x21, 0xB8, 0x01, 0x4C, 0xCD, 0x21, 0x54, 0x68,
-            0x69, 0x73, 0x20, 0x70, 0x72, 0x6F, 0x67, 0x72, 0x61, 0x6D, 0x20, 0x63, 0x61, 0x6E, 0x6E, 0x6F,
-            0x74, 0x20, 0x62, 0x65, 0x20, 0x72, 0x75, 0x6E, 0x20, 0x69, 0x6E, 0x20, 0x44, 0x4F, 0x53, 0x20,
-            0x6D, 0x6F, 0x64, 0x65, 0x2E, 0x0D, 0x0D, 0x0A, 0x24, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        };
-bw.Write(dosStub);
-bw.Write(new byte[16]); // パディング
-
-// PEシグネチャ (DOSヘッダーから0x80バイト目)
-bw.Seek(0x80, SeekOrigin.Begin);
-bw.Write(Encoding.ASCII.GetBytes("PE\0\0"));
-
-// COFF File Header
-uint timestamp = (uint)(DateTimeOffset.UtcNow.ToUnixTimeSeconds() & 0xFFFFFFFF);
-
-bw.Write((ushort)0x8664);  // Machine: x64
-bw.Write((ushort)1);       // NumberOfSections
-bw.Write(timestamp);       // TimeDateStamp (現在時刻)
-bw.Write((uint)0);         // PointerToSymbolTable
-bw.Write((uint)0);         // NumberOfSymbols
-bw.Write((ushort)0xF0);    // SizeOfOptionalHeader
-bw.Write((ushort)0x22);    // Characteristics: 実行可能
-
-// Optional Header - Standard Fields
-bw.Write((ushort)0x20B);   // Magic: PE32+ (64ビット)
-bw.Write((byte)14);        // MajorLinkerVersion
-bw.Write((byte)31);        // MinorLinkerVersion
-bw.Write((uint)0x200);     // SizeOfCode
-bw.Write((uint)0x400);     // SizeOfInitializedData
-bw.Write((uint)0);         // SizeOfUninitializedData
-bw.Write((uint)0x1000);    // AddressOfEntryPoint
-bw.Write((uint)0x1000);    // BaseOfCode
-
-// Optional Header - Windows-Specific Fields
-bw.Write((ulong)0x140000000); // ImageBase
-bw.Write((uint)0x1000);    // SectionAlignment
-bw.Write((uint)0x200);     // FileAlignment
-bw.Write((ushort)10);      // MajorOperatingSystemVersion (Windows 10)
-bw.Write((ushort)0);       // MinorOperatingSystemVersion
-bw.Write((ushort)0);       // MajorImageVersion
-bw.Write((ushort)0);       // MinorImageVersion
-bw.Write((ushort)10);      // MajorSubsystemVersion (Windows 10)
-bw.Write((ushort)0);       // MinorSubsystemVersion
-bw.Write((uint)0);         // Win32VersionValue
-bw.Write((uint)0x3000);    // SizeOfImage
-bw.Write((uint)0x400);     // SizeOfHeaders
-bw.Write((uint)0);         // CheckSum
-bw.Write((ushort)3);       // Subsystem: コンソール
-bw.Write((ushort)0x8140);  // DllCharacteristics: NX互換, ハイエントロピーVA, ターミナルサーバ対応
-bw.Write((ulong)0x100000); // SizeOfStackReserve
-bw.Write((ulong)0x1000);   // SizeOfStackCommit
-bw.Write((ulong)0x100000); // SizeOfHeapReserve
-bw.Write((ulong)0x1000);   // SizeOfHeapCommit
-bw.Write((uint)0);         // LoaderFlags
-bw.Write((uint)16);        // NumberOfRvaAndSizes
-
-// データディレクトリ (16個)
-for (int i = 0; i < 16; i++)
-{
-    bw.Write((uint)0); // VirtualAddress
-    bw.Write((uint)0); // Size
-}
-
-// セクションテーブル
-// .text セクション
-bw.Write(Encoding.ASCII.GetBytes(".text\0\0\0")); // Name
-bw.Write((uint)0x10);      // VirtualSize
-bw.Write((uint)0x1000);    // VirtualAddress
-bw.Write((uint)0x200);     // SizeOfRawData
-bw.Write((uint)0x400);     // PointerToRawData
-bw.Write((uint)0);         // PointerToRelocations
-bw.Write((uint)0);         // PointerToLinenumbers
-bw.Write((ushort)0);       // NumberOfRelocations
-bw.Write((ushort)0);       // NumberOfLinenumbers
-bw.Write((uint)0x60000020); // Characteristics: 実行可能コード
-
-// .text セクションのコード
-bw.Seek(0x400, SeekOrigin.Begin);
-
-// 単純なハローワールドプログラム相当 (コンソールウィンドウを一瞬表示）
-// 64ビットWindows calling convention: 
-// RCX, RDX, R8, R9が最初の4つの引数
-// RAXは戻り値
-
-// mov rcx, 0 (ExitCode = 0)
-// call ExitProcess
-byte[] code = {
-            0x48, 0xC7, 0xC1, 0x00, 0x00, 0x00, 0x00,  // mov rcx, 0
-            0x48, 0x31, 0xC0,                          // xor rax, rax
-            0x48, 0xFF, 0xC0,                          // inc rax
-            0xC3                                        // ret
-        };
-
-bw.Write(code);
-
-// ファイルサイズを調整
-bw.Seek(0x600, SeekOrigin.Begin);
-
-```
+- キャリアブレイクについて
+  - 5.16(金) [日替わりゲストBAR「キャリアブレイク×立ち止まる×ウェルビーイング経営×コミュニティ活動×プログラミング」](https://bloomingcamp.sakura.ad.jp/events/g2uhpb022n)
 
