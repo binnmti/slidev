@@ -15,144 +15,111 @@ transition: slide-left
 mdc: true
 ---
 
-# Pinetree
+# 📝 マークダウン講座
 
-## binnmti
-
----
-
-# 👉 Pinetree
-- Web-based **hierarchical markdown editor**
-- Organizes content in structured layers
-- Balances brevity with detailed information
+### 1.5期生 & TA 松井 敏
 
 ---
 
-# 💡 What is Hierarchical Markdown?
-- Inspired by Amazon's "One Pager" culture
-- Short summaries with expandable details
-- Solves the brevity vs. detail dilemma
+# 自己紹介
+
+- 👨 松井 敏(まつい びん)
+- 👨‍💻 元ゲームプログラマ & 元Windowsソフトウェアプログラマ
+- 👜 HACARUS C#&CI/CD メンター(副業)
+- 🏆 Microsoft MVP for Developer Technologies 2012-2025
+- 📚 Unity5 3Dゲーム開発講座 ユニティちゃんで作る本格アクションゲーム
+- 💻 C#読書会主催、Greek Alphabet Software Academy TA
+- ❤️ プログラム、マンガ、料理、睡眠、妻&子供
+
 
 ---
 
-# 📝 Traditional Document Problems
-- Long documents are hard to read
-- Split files lose connection visibility
-- File-based hierarchy has limitations
+# 📖 マークダウンとは？
+- 文章を記号で強調・整理するシンプルなルール。
+- 見やすく、使いやすい文章表現。
+- 誰でも簡単に習得可能。
 
 ---
 
-# 🌲 Hierarchical Text Structure
-- Content organized within text structure
-- Web-based smooth navigation
-- Intuitive structural connections
+# ❌ 従来ツールの問題点
+- MSワードやGoogleドキュメントは装飾可能。
+- 他エディタへのコピペで装飾が失われる。
+- 特定ソフトへの依存が発生。
 
 ---
 
-# 📋 Solution
-- Perfect for travel plans, resumes, notes
-- One Pager summaries + detailed hierarchies
-- Recursive readable structure
-
------
-
-# ❤ My Ultimate Markdown Editor
-- Love "left input, right preview" view
-- GitHub separate tabs feel inconvenient
-- Need true markdown export capability
+# ✅ マークダウンの利点
+- 文章構造をルール化。
+- 色んなツールで同じ形で表示。
+- **シンプルで確実な表現力**。
 
 ---
 
-# ✍️ Enhanced Writing
-- Auto-continuation for lists and numbering
-- Tab key fixed to 2 spaces
-- Toolbar for syntax insertion
+# 💻 エンジニア領域での普及
+- **GitHub** - READMEファイルやドキュメント
+- **Qiita** - 技術記事の執筆
+- **はてなブログ** - マークダウン形式選択可
+- **Discord** - チャットでも使える
+- **Notion** - 貼り付け対応
 
 ---
 
-# 🖼️ Easy Media
-- Drag & drop image insertion
-- UNDO/REDO functionality
-- Emoji support
+# 📁 ファイル形式での利用
+- .md拡張子で軽量保存。
+- 対応エディタで即座に表示。
+- テキストファイルとして軽量。
 
 ---
 
-# 🚀 Core Features Ready
-- Basic functionality implemented
-- Hierarchical structure support
-- Covers essential editor elements
+# 🤖 AI・LLMとの相性抜群
+- LLMがマークダウンルールを理解。
+- 見出しや強調表現を正確に認識。
+- 最も確実でシンプルな書き方。
 
 ---
 
-# Demo1
-
-- Markdown editor demonstration
-
---- 
-
-# Demo2
-
-- Hierarchical structure demo
+# 📚 今回学習する基本ルール
+- **Headers（見出し）** - 文章の構造化
+- **Lists（リスト）** - 項目の列挙
+- **Links（リンク）** - 外部参照の挿入
+- **Blockquotes（引用）** - 他者文章の引用
 
 ---
 
-# 📊 Hierarchy Reduces Reading
-- Structural organization reduces reading load
-- Chapter division improves comprehension
-- Useful in many scenarios
+# 🎨 基本記法の種類
+- **太字・斜体** - 文字の強調表現
+- **打ち消し線** - 削除や訂正の表現
+- **コードの挿入** - プログラムコード表示
+- **水平線** - セクション区切り
+- **画像の埋め込み** - 視覚的情報追加
+- **表（テーブル）** - データ整理表示
 
 ---
 
-# ✈️ Dynamic Planning
-- Perfect for travel planning
-- Handle changing requirements
-- Flexible information clustering
+# 🚀 特殊機能（プラットフォーム依存）
+- **数式** - LaTeX記法での数学表現
+- **Mermaid図** - フローチャートや関係図
+- **楽譜** - 音楽記譜
+- **チェックボックス** - TODOリスト作成
+- **絵文字** - :smile: のような表現
 
 ---
 
-# 📅 Time-Series Compatible
-- Blog posts and date-based content
-- Weekly/monthly hierarchy options
-- Single-file multi-month management
+# 💪 習慣化の効果
+- マークダウンが身につくと常に使いたくなる。
+- 非対応エディタでもマークダウンで記述。
+- **Windows11メモ帳も対応済み**。
 
 ---
 
-# 🔄 Flexible Structure
-- No single correct approach
-- Varies by purpose and volume
-- Parent-child vs sibling flexibility
+# 👀 構造化文章の読みやすさ
+- ルール化により専用エディタ不要で読みやすい。
+- **最重要は#の見出しと-のリスト**。
+- **これだけで資料的な形になる**。
 
 ---
 
-# 🙏 Feedback Requested
-- Daily usage phase reached
-- Need real user validation
-- Honest hierarchical structure opinions wanted
-
----
-
-# ⚡ Simple Limits
-- Depth, file, and character restrictions
-- Seeking appropriate limit feedback
-- Future paid plans for power users
-
----
-
-# 📢 Easy Contact
-- Official website for feedback
-- Discord for casual discussion
-- Choose your preferred channel
-
----
-
-# 🎁 Feedback Rewards
-- Valuable contributors get permanent free access
-- Pre-launch 1-year premium coupons
-- Current feedback shapes service direction
-
----
-
-# 🌟 New Writing Experience
-- Hierarchical markdown editor "Pinetree"
-- Innovative text structure balance
-- Your feedback awaited!
+# 🎯 実用例
+- この資料ももちろんマークダウン形式！
+- 日常的な文章作成に最適。
+- シンプルで効果的な表現手法。
