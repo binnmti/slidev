@@ -1,157 +1,288 @@
 ---
-theme: seriph
-background: https://cover.sli.dev
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+theme: default
+background: https://source.unsplash.com/1920x1080/?programming,code
 class: text-center
 highlighter: shiki
+lineNumbers: false
+info: |
+  ## AIと一緒にC#を書く時代のワークフロー
+  
+  GitHub CopilotとVS Code/Visual Studioを使った効率的な開発スタイル
 drawings:
   persist: false
 transition: slide-left
+title: AIと一緒にC#を書く時代のワークフロー
 mdc: true
+
 ---
 
-# 📝 マークダウン講座
+# AIと一緒にC#を書く時代のワークフロー
 
-### 1.5期生 & TA 松井 敏
+最近の自分の開発スタイル  
+「AIと一緒にコードを書く」ことが前提
+
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    Press Space for next page <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+
+<div class="abs-br m-6 flex gap-2">
+  <a href="https://github.com/binnmti" target="_blank" alt="GitHub"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+</div>
 
 ---
 
 # 自己紹介
 
 - 👨 松井 敏(まつい びん)
-- 👨‍💻 元ゲームプログラマ & 元Windowsソフトウェアプログラマ
-- 👜 HACARUS C#&CI/CD メンター(副業)
+- 👨‍💻 フリーランスプログラマ
+  - C#を中心に、ゲーム・Windowsアプリ・Webなど幅広く開発
+  - 自動化、CI/CD、SREにも携わり、開発から運用まで得意。
+  - 講師や技術書執筆、技術顧問なども。
+  - モノづくりが大好きなので、誰かの作りたいをサポートします！
 - 🏆 Microsoft MVP for Developer Technologies 2012-2025
 - 📚 Unity5 3Dゲーム開発講座 ユニティちゃんで作る本格アクションゲーム
 - 💻 C#読書会主催、Greek Alphabet Software Academy TA
 - ❤️ プログラム、マンガ、料理、睡眠、妻&子供
 
+---
+
+# 開発ツールの役割分担
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div>
+
+## Visual Studio 🔧
+- **メインの開発環境**
+- 実行・デバッグ・確認
+- 最終的なコード整形
+- GitHub Copilot Agentは使わない
+  - 応答不能になりやすい
+  - 最新モデルが使えない
+
+</div>
+
+<div>
+
+## VS Code 💭  
+- **AIとのやりとり**
+- GitHub Copilot Ask/Agent
+- 思考整理と壁打ち
+- コード生成・修正
+- 圧倒的に安定している
+
+</div>
+
+</div>
+
+<div class="mt-6 text-center">
+<v-click>
+
+**つい最近まで Visual Studio 一択 → 今は二本柱**
+
+</v-click>
+</div>
 
 ---
 
-# 📖 マークダウンとは？
-- 文章を記号で強調・整理するシンプルなルール。
-- 見やすく、使いやすい文章表現。
-- 誰でも簡単に習得可能。
+# Askモードで思考整理
 
-> 元々htmlをシンプルに書けるルールとして作られた経緯がある
+## 🤔 AIとの壁打ち
+- いきなりAgentで書かせるのはギャンブル（成功率50%以下）
+- まずはAskで「やりたいこと」を**乱文でもOK**で書き出す
+- モデルは**Sonnet 4**中心（Opusとの行き来が面倒）
 
----
+## 📝 ワークフロー
+1. **思考を言語化** → Askに投げる
+2. **コード付きの回答** → 何ターンか壁打ち
+3. **方向性がずれたら** → コメントで軌道修正  
+4. **話がまとまらない** → ゼロから書き直し
+5. **方向性が見えたら** → 「今までの流れをふまえてコードにして」
 
-# ❌ 従来ツールの問題点
-- MSワードやGoogleドキュメントは装飾可能。
-- 他エディタへのコピペで装飾が失われる。
-- 特定ソフトへの依存が発生。
+<v-click class="mt-6">
 
-> つまり、昔からあるツールでも文章を「装飾したい」というモチベーションは強かった
+💡 **長くなったら**: 「これをゼロベースでAgentに投げるならどうプロンプト書く？」
 
----
-
-# ✅ マークダウンの利点
-- 文章構造をルール化。
-- 色んなツールで同じ形で表示。
-- テキストファイルとして軽量。
-
->  テキストファイルなのがエンジニアに人気のポイントかも
+</v-click>
 
 ---
 
-# 💻 エンジニア領域での普及
-- **GitHub** - READMEファイルやドキュメント
-- **Qiita,Zenn** - 技術記事の執筆
-- **はてなブログ** - マークダウン形式選択可
-- **Connpass** - 詳細はマークダウンで記入
-- **Discord** - チャットでも使える
-- **Notion** - 貼り付け対応
+# Agentモードでのコーディング
 
->  一見対応してないツールでもコピペしたら貼れるケースもある
+<div class="grid grid-cols-2 gap-6">
 
----
+<div>
 
-# 📁 ファイル形式での利用
-- .md拡張子で軽量保存。
-- 対応エディタで即座に表示。
-- Gitの差分も見やすい。
+## ⚙️ 設定・注意点
+- **Auto Approve ON** 
+- でも「次のプロンプト使いますか？」で止まりやすい
+- コマンド実行後に進まない → **同じコマンド再実行**
+- **プロンプト間違い** → 止めて打ち直し
 
->  特にGit管理されているプロジェクトは全てmdで作るかも
+</div>
 
----
+<div>
 
-# 🤖 AI・LLMとの相性抜群
-- LLMがマークダウンルールを理解。
-- 見出しや強調表現を正確に認識。
-- 最も確実でシンプルな書き方。
+## 🎯 運用のコツ
+- 出力が変な方向 → **止めてコメント指摘**
+- 出力中は他作業と並行もアリ
+- 複数セッション同時は試したことなし
+- **Opusから Sonnetへの切り替えで精度低下**（主観）
 
->  強調表現などは「」などでも大体理解してそうだけど、明確にルール化されていると、確率が高くなる
+</div>
 
----
+</div>
 
-# 📝 マークダウンエディタ
-- メモ帳
-- Visual Studio Code
-- Github
-- HackMD
-- Pinetree
-- 個人的には右にプレビューが出るものが使いやすい
-- ツールによっては記号表現が強調表示になったり、入力補完があったりする
-- Helpがあるものや、ツールボタンなどが使えたりもする
-- 一旦説明続けます。後でみんなでさわりましょう。
+<div class="mt-8 text-center bg-blue-100 p-4 rounded">
+<v-click>
+
+**ポイント**: 無理やり続けずに、おかしいと思ったら止める
+
+</v-click>
+</div>
 
 ---
 
-# 📚 今回学習する基本ルール
-- **Headers（見出し）** - 文章の構造化
-`# Headers`
-- **Lists（リスト）** - 項目の列挙
-`- List`
-- **Links（リンク）** - 外部参照の挿入
-`[Title](Link) `
-- **Blockquotes（引用）** - 他者文章の引用
-`> `
+# Visual Studioでの確認
 
->  空白大事
+<div class="grid grid-cols-2 gap-6">
 
----
+<div>
 
-# 🎨 基本記法の種類
-- **太字・斜体** - 文字の強調表現
-- **打ち消し線** - 削除や訂正の表現
-- **コードの挿入** - プログラムコード表示
-- **水平線** - セクション区切り
-- **画像の埋め込み** - 視覚的情報追加
-- **表（テーブル）** - データ整理表示
+## 🔍 確認フロー
+1. **差分をざっと見て変更箇所把握**  
+   （多すぎるときは詳細追わず）
 
----
+2. **実行して動作確認**  
+   → 想定外なら再びAgentへ
 
-# 🚀 特殊機能（プラットフォーム依存）
-- **数式** - LaTeX記法での数学表現
-- **Mermaid図** - フローチャートや関係図
-- **楽譜** - 音楽記譜
-- **チェックボックス** - TODOリスト作成
-- **絵文字** - :smile: のような表現
+3. **想定通りなら、コードをじっくり見る**
 
----
+</div>
 
-# 💪 習慣化の効果
-- マークダウンが身につくと常に使いたくなる。
-- 非対応エディタでもマークダウンで記述。
-- **Windows11メモ帳も対応済み**。
+<div>
+
+## ✋ スタイルの受け入れ
+
+**以前**: 自分のコードスタイルに整形
+
+**今**: ある程度そのまま受け入れる  
+明らかに変な部分だけAgentに指摘
+
+</div>
+
+</div>
 
 ---
 
-# 👀 構造化文章の読みやすさ
-- ルール化により専用エディタ不要で読みやすい。
-- **最重要は#の見出しと-のリスト**。
-- **これだけで資料的な形になる**。
+# 最終調整の現実
+
+## 😤 手修正あるある
+
+<div class="space-y-4">
+
+<div class="bg-red-100 p-4 rounded-lg">
+<h3 class="text-lg mb-2">改行問題</h3>
+<p><strong>改行は高確率でおかしい</strong> → 「クソが」と思いつつ手修正</p>
+</div>
+
+<div class="bg-blue-100 p-4 rounded-lg">
+<h3 class="text-lg mb-2">対処法</h3>
+<p>全体コピペで直ることも → <strong>まずはそれを試す</strong></p>
+</div>
+
+<div class="bg-green-100 p-4 rounded-lg">
+<h3 class="text-lg mb-2">重要</h3>
+<p>コード整ったら<strong>コミット必須</strong></p>
+</div>
+
+</div>
 
 ---
 
-# 🎯 実用例
-- この資料ももちろんマークダウン形式！
-- 日常的な文章作成に最適。
-- シンプルで効果的な表現手法。
+# AIリファクタとPRレビュー
+
+<div class="grid grid-cols-2 gap-6">
+
+<div>
+
+## 🔄 リファクタ依頼
+- 「もっとシンプルにできる？」
+- **わりと壊されることも**
+- だからコミットは必須
+- 気に入らなければロールバック
+
+</div>
+
+<div>
+
+## 👀 PRレビュー活用
+1. **自分でざっと確認**
+2. **Copilot + Code Rabbit**のAIレビュー
+3. **気になった指摘だけ**をAgentに投げる
+4. 部分的に修正 → 再コミット
+5. PRが通ったらマージ
+
+</div>
+
+</div>
+
+<div class="mt-8 text-center">
+<v-click>
+
+**全部は投げない** - 選別が重要
+
+</v-click>
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# まとめ
+
+## 🎯 キーポイント
+
+**Ask** → **Agent** → **Visual Studio** → **AI Review**
+
+<v-click>
+
+### 思考整理 → コード生成 → 確認・実行 → 最終調整
+
+</v-click>
+
+<v-click>
+
+### AIと協業する時代のワークフロー
+
+**完璧を求めず、適度に受け入れる**
+
+</v-click>
+
+<div class="pt-8">
+  <span class="text-sm opacity-75">
+    あくまで個人的なスタイル - 参考程度に 🙂
+  </span>
+</div>
+
+---
+
+# Thank you!
+
+<div class="pt-12 text-center">
+  <div class="text-2xl mb-4">質問・ディスカッション歓迎</div>
+  <div class="text-lg opacity-75">AIとのペアプログラミング体験談</div>
+</div>
+
+<div class="abs-br m-6 flex gap-2">
+  <a href="https://github.com/binnmti" target="_blank" alt="GitHub"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+</div>
