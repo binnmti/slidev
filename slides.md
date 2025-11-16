@@ -1,12 +1,9 @@
 ---
 theme: seriph
 background: https://cover.sli.dev
-title: Welcome to Slidev
+title: Visual StudioとVS CodeとA(I)
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## Visual StudioとVS CodeとA(I)
 class: text-center
 highlighter: shiki
 drawings:
@@ -27,7 +24,7 @@ h1 {
 }
 </style>
 
-# Visual StudioとVS Codeと A(I)
+# Visual StudioとVS CodeとA(I)
 
 ## 松井 敏
 
@@ -49,8 +46,8 @@ h1 {
 
 - 大体2006年頃から使用開始
 - つまり約20年共に歩んできた
-- 揺るぎないNo.1 IDE
-- 「死んだら棺に入れて」と思っているｗ
+- 僕にとって揺るぎないNo.1の神IDE
+- 「死んだら棺に入れて」と思っている。まさに永遠の愛
 
 ---
 
@@ -58,8 +55,8 @@ h1 {
 
 ## 2024年
 
-- 9月頃では生成名前付けの役に立つ程度
-- プロンプトを頑張ってアプリを作らせてみるも正直まだまだ
+- 9月頃までは生成AIが名前付けの補助になる程度
+- プロンプトを工夫してアプリを作らせても正直まだまだ
 
 ## 2025年初頭
 
@@ -76,12 +73,21 @@ h1 {
 - Askモードで出力されたコードでは何度か失敗が続く
 - フラストレーションがたまってきた
 
-## AI Agent
+## Agentモードの波
 
 - 世の中で**Agentモード**が話題になり始めていた
 - しかしVisual Studioにはなかなか実装されない
 - VS Codeは既に搭載済みだった
-- そこでVS Code の GitHub CopilotのAgent モードを試すことに
+- そこでVS Code の GitHub CopilotのAgentモードを試すことに
+
+---
+
+# その時の内心
+
+- ちなみにこの決断は自分にとっては宗教を変えるぐらいの一大決心
+- それぐらい他の開発環境を使う事には抵抗があった
+- それまで軽くVS Codeをさわることはあったが、単なるテキストエディタだと思っていた
+- IDEとテキストエディタはツールとしても体験としても全く次元が異なるものという認識
 
 ---
 
@@ -118,16 +124,16 @@ h1 {
 
 ### VS Code + GitHub Copilot
 - **Askモード**で仕様を固める
-- **Agentモード**で実装　→　
-- **Agentモード**でコード修正　→　
+- **Agentモード**で実装まで任せる
+- **Agentモード**でコード修正を繰り返す
 
 </div>
 <div class="bg-green-50 p-4 rounded">
 
 ### Visual Studio
-- コードリーディング
-- ← 実行と確認
-- ↓ コミット・PR作成
+- コードチェック
+- 実行と確認
+- コミット・PR作成
 
 </div>
 </div>
@@ -160,26 +166,26 @@ graph LR
 ## Claude Code
 
 - 使ってみたが日本語入力時の場所移動が嫌すぎる
-- Visual Studio Codeの公式ExtentionでGUI対応
+- Visual Studio Codeの公式ExtensionでGUI対応
 - 徐々にGitHub CopilotとClaude Codeの二刀流に
 
 ---
 
 # Claude Code vs GitHub Copilot
-- Claude Code vs GitHub CopilotでほぼどちらもClaude Sonnet4.5
-- プロンプトを繰り返すと大差ない印象
+- どちらもClaude Sonnet 4.5ベースなので挙動は概ね近い
+- プロンプトを繰り返すと差はほぼ感じない
 - ただClaude Codeの方が**ファーストプロンプトの精度が顕著に高い**
-- Claude Code Proだったが、10回ぐらいリミットが来たのでいよいよMaxに課金した
+- Claude Code Proだったが、10回ほどでリミットが来るためMaxに課金した
 
 ---
 
 # ファーストプロンプト
 
 - AI開発で最初の１回はとても重要
-- Planモードでプロンプトを作ってAgentモードにそのプロンプトを投げるが王道
-- この精度をさらに上げるのに、各AIに渡すClaude.md, copilot-instructions.mdは重要
-- またMCPも初回が一番把握してくれている気がする
-- 個人的にはこの内容はプロンプトを繰り返すごとにAIが忘れていくように感じる
+- Planモードで練り上げたプロンプトをAgentモードに投げるのが王道
+- 精度をさらに上げるにはClaude.mdやcopilot-instructions.mdの整備が重要
+- MCPも初回が一番コンテキストを把握してくれている印象
+- プロンプトを繰り返すほどコンテキストが薄れるので再投入の仕組みが必要
 
 ---
 
@@ -227,9 +233,25 @@ graph LR
   - でもこの並列数を上げると突然変異も生まれるらしい
 - なるべく自動実行の仕組みが欲しい
 
-
 ---
 
+# まだ迷い中
+
+- 並列開発は重要なキーワードだがスタイルは模索中
+  - KAMUIが面白そうで100並列も検討中
+  - 今後は1000並列の使い方も
+  - Github Actionsの並列も
+- GitHub Copilot Coding Agent  
+  - 個人的にはAgentモードよりもさらに好きじゃない
+  - やることがレビューだけになる
+- ファーストプロンプトは、SpecDDが流行っている
+  - まださわってないけれどKiro
+  - GitHubもSpec Kitを作っている
+- LLMをLLMで評価するLLM-as-a-Judge
+  - 結局良し悪しは個人の好みになりがちなのでAIに判断してもらう
+  - 並列開発でやりたいことは結局結果の確認
+
+---
 
 # まとめ：開発スタイルの進化
 
@@ -259,27 +281,13 @@ graph LR
 **並列開発**
 
 - 2025年11月〜
-- 複数モデル活用
-- VS Code, VsCode Insider, Cursor
+- VS Code(GitHub Copilot, Claude Code),
+- VsCode Insider(GitHub Copilot, Codex, Claude Code), 
+- Cursor(Claude Code, GPT5.1 Codex Hight)
 - まだスタイルは確定していない
 
 </div>
 </div>
-
-
----
-
-# 今後はまだ迷い中
-
-- 並列開発は重要なキーワードだがスタイルは模索中
-  - KAMUIが面白そうで100並列も検討中
-  - 今後は1000並列の使い方も
-  - Github Actionsの並列も
-- ファーストプロンプトは、SpecDDが流行っている
-  - まださわってないけれどKiro
-  - GitHubもSpec Kitを作っている
-- LLMをLLMで評価するLLM-as-a-Judge
-  - 結局良し悪しは個人の好みになりがちなのでAIに判断してもらう
 
 ---
 
@@ -290,6 +298,6 @@ graph LR
 - Visual Studio2022で検証、数カ月に１回程度試しても進化はせず
 - 先週Visual Studio2026でのAgentモード再検証
 - Claude Code > VS Code > Visual Studio
-- また検討に帰ってきた我が相棒
+- コード、差分、ビルドなどやっぱり素晴らしいと思う点も多い
+- 帰ってきた我が愛人
 
----
