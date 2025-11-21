@@ -47,11 +47,11 @@ h1 {
 <div class="text-3xl">
 
 - **Phase 1: AI Ask → AI Agent**
-   - Visual Studio
-- **Phase 2: AI Agent → AI Plan + AI Agent**
-   - Visual Studio + VS Code
-- **Phase 3: AI Plan + AI Agent → AI Plan + Parallel AI Agent**
-   - Visual Studio + VS Code + Cursor
+   - Delelop Tool : Visual Studio
+- **Phase 2: AI Agent → AI Ask + AI Agent**
+   - Delelop Tool : Visual Studio + VS Code
+- **Phase 3: AI Ask + AI Agent → AI Plan + Parallel AI Agent**
+   - Delelop Tool : Visual Studio + VS Code + Cursor
 
 </div>
 
@@ -104,7 +104,7 @@ Visual Studio
 - 2〜3日程度のタスクをAIと取り組むことに
 - Askモードで出力されたコードで3回連続失敗が続く
 - フラストレーションがたまってきた
-- そこでVS Code の GitHub CopilotのAgentモードを試すことに
+- そこでVS Code の Agentモードを試すことに
 
 ---
 
@@ -144,7 +144,7 @@ class: text-center
 ---
 
 <div class="text-6xl font-bold">
-AI Agent → AI Plan + AI Agent
+AI Agent → AI Ask + AI Agent
 </div>
 <div class="text-3xl">
 Visual Studio + VS Code
@@ -198,7 +198,7 @@ graph LR
 - 初期のAIコーディングはGPTを使用していた
 - Github Copilotでモデルが選べるようになり**Claude Sonnet 3.5**がかなり良かった
 - その後様々なモデルを試すも、個人的にはずっとAnthropicが最強
-- CopilotライセンスでCodexが使えるようになり試したが、個人的にはやっぱりClaude Sonnet
+- CopilotライセンスでCodexが使えるようになり試したが、個人的にはやっぱりAnthropic
 
 ## Claude Code
 
@@ -243,7 +243,7 @@ class: text-center
 ---
 
 <div class="text-6xl font-bold">
-AI Plan + AI Agent → AI Plan + Parallel AI Agent
+AI Ask + AI Agent → AI Plan + Parallel AI Agent
 </div>
 <div class="text-3xl">
 Visual Studio + VS Code + Cursor
@@ -270,7 +270,7 @@ Visual Studio + VS Code + Cursor
 - ただ数分だけSSDも圧迫するし、管理も間違えやすい
 - もっといい機能がgitにあるんじゃない？→それがgit worktree。
 - 好きな別フォルダに全コピーされ、.gitは元と共有。
-- 元のブランチにcommitも可能。git worktree removeで削除
+- commit, pushも可能。git worktree removeで削除
 
 ---
 
@@ -288,11 +288,23 @@ Visual Studio + VS Code + Cursor
 
 - CursorでClaude Code, GPT5-codexで並列開発
 - Claude Code×4は正直殆ど変わらないのであんまり。
-- worktreeはgit管理下にない設定ファイルは付いてこない。ただ元リポジトリはある。プロンプト次第
+- worktreeは自動で作ってくれる
 - なるべく1手で完了までいって実行してもらうのが理想。これもプロンプト次第
 - Cursorでは差分が見にくいし各worktreeの比較が難しい。
 - 現状はVisual Studioで一つずつ確認している
 - UI未確定時とかで色んなパターンを見たい時には結構良い
+
+---
+
+# 実験その3　オリジナル並列開発マルチモデル
+
+- Cursorで今からやることをやろうとしたら上限来てたｗ。。。
+- 先ずはClaude CodeのPlanモードで内容を詰める。詰まった内容はmdで出力する。
+- VS CodeでCodex->GPT-5.1-Codex-Max, Claude Code->Sonnet 4.5(Opusにすれば良かった), GitHub Copilot->Gemini3.0で並列開発
+- それぞれにworktreeを作ってと頼んで実行までやってくれと頼む
+- 因みにGemini3.0はいきなり無視してworktreeを作らなかったｗ。
+- 個人的な見解ではClaude Codeの勝利
+- マージが上手くいかず結局手でコピーした。。
 
 ---
 
