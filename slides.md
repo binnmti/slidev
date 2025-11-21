@@ -24,7 +24,7 @@ h1 {
 }
 </style>
 
-# Visual StudioとVS CodeとA(I)
+# Visual StudioとVS CodeとA(I)❤️
 
 ## 松井 敏
 
@@ -34,10 +34,10 @@ h1 {
 
 - 👨 松井 敏(まつい びん)
 - 👨‍💻 フリーランスプログラマ
-- 👜 某大学でSRE50% + HACARUSでC#エンジニア30% + ZenTechでAIエージェント30%
-- 🏆 Microsoft MVP for Developer Technologies 2012-2025
-- 📚 Unity5 3Dゲーム開発講座 ユニティちゃんで作る本格アクションゲーム
-- 💻 C#読書会主催、Greek Alphabet Software Academy TA
+- 👜 某大学でSRE50% + [HACARUS](https://hacarus.com/ja/)でC#エンジニア30% + [ZenTech](https://www.zen-tech.co.jp/company)でAIエージェントエンジニア30%
+- 🏆 [Microsoft MVP for Developer Technologies 2012-2025](https://mvp.microsoft.com/en-US/MVP/profile/f8610ff3-3c9a-e411-93f2-9cb65495d3c4)
+- 📚 [Unity5 3Dゲーム開発講座 ユニティちゃんで作る本格アクションゲーム](https://amzn.to/47YnopE)
+- 💻 [C#読書会主催](https://cs-reading.connpass.com/)、[Greek Alphabet Software Academy TA](https://greek-academy.org/)
 - ❤️ プログラム、マンガ、料理、睡眠、妻&子供
 
 ---
@@ -46,15 +46,13 @@ h1 {
 
 <div class="text-3xl">
 
-1. **AI開発**
-   - Visual Studio × AI
+- **Phase 1: AI Ask → AI Agent**
+   - Visual Studio
+- **Phase 2: AI Agent → AI Plan + AI Agent**
+   - Visual Studio + VS Code
+- **Phase 3: AI Plan + AI Agent → AI Plan + Parallel AI Agent**
+   - Visual Studio + VS Code + Cursor
 
-2. **二刀流開発**
-   - (Visual Studio + VS Code) × AI
-
-3. **並列開発**
-   - VS Code(GitHub Copilot, Codex, Claude Code) × AI
-   - Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
 </div>
 
 ---
@@ -63,18 +61,17 @@ class: text-center
 ---
 
 <div class="text-6xl font-bold">
-AI開発
+AI Ask → AI Agent
 </div>
-<div class="text-4xl">
-Visual Studio × AI
+<div class="text-3xl">
+Visual Studio
 </div>
 
 ---
 
-# I(私)のVisual StudioへのAi(愛)
+# I(私)のVisual Studioへの❤️(Ai)
 
-- 大体2006年頃から使用開始
-- つまり約20年共に歩んできたパートナー
+- 大体2006年頃から使用開始。約20年共に歩んできたパートナー
 - 僕にとって揺るぎないNo.1の神IDE
 - 「死んだら棺に入れて」と思っている。まさに永遠の愛
 
@@ -84,8 +81,8 @@ Visual Studio × AI
 
 ## 2024年
 
-- 9月頃までは生成AIが名前付けの補助になる程度
-- プロンプトを工夫してアプリを作らせても正直まだまだ
+- 仕事を辞めた9月頃はまだAIは名前付けの補助になる程度だった
+- プロンプトを工夫して電卓を作らせてもまだまだ全然だった
 
 ## 2025年初頭
 
@@ -99,33 +96,31 @@ Visual Studio × AI
 
 ## Agentモードの波
 
-- 世の中で**Agentモード**が徐々に話題になってきた
+- 世の中で**Agentモード**が徐々に話題になってきていた
 - しかしVisual Studioにはなかなか実装されない
 - VS Codeは既に搭載済みだった
 
 ## 2025年5月
 - 2〜3日程度のタスクをAIと取り組むことに
-- Askモードで出力されたコードでは何度か失敗が続く
+- Askモードで出力されたコードで3回連続失敗が続く
 - フラストレーションがたまってきた
 - そこでVS Code の GitHub CopilotのAgentモードを試すことに
 
 ---
 
-# その時の内心
+# VS Codeへの浮気
 
-- ちなみに自分にとってはとても大きな決断
-- 他の開発環境を使う事にはかなりの抵抗があった
+- ちなみに自分にとってVS Codeを使う事かなり大きな決断
+- そもそもプログラムに他の開発環境を使う事にはかなりの抵抗があった（ある意味では浮気）
 - それまでVS Codeを軽くさわることはあったが、単なるテキストエディタだと思っていた
 - IDEとテキストエディタはツールとしても体験としても全く次元が異なるものという認識
-- ある意味では宗教を変えるぐらいの一大決心
 
 ---
 
-# AI Shock
+# I は Shock
 
 - いきなりタスクの全コードを数分で出力
 - それがほぼ想定通りだった
-  - （今思えばたまたま？）
 - 凄いというよりも強い憤りを感じた
 
 <div class="text-center text-3xl my-8">
@@ -139,10 +134,9 @@ Visual Studio × AI
 
 # Visual Studio’s Agent
 
-- しかし徐々にAI開発はVS Code + Github CopilotのAgentモードにスライドしていく
+- しかし徐々にAI開発はVS CodeのAgentモードにスライドしていく
 - そして待望のVisual Studioにも Agentモードが実装される！
-- しかし、期待外れの出来栄え...
-- 大きく落胆
+- しかし、期待外れの出来栄え...大きく落胆。冷める愛。
 
 ---
 layout: center
@@ -150,17 +144,17 @@ class: text-center
 ---
 
 <div class="text-6xl font-bold">
-二刀流開発スタイル
+AI Agent → AI Plan + AI Agent
 </div>
-<div class="text-3xl font-bold">
-(Visual Studio + VS Code) × AI
+<div class="text-3xl">
+Visual Studio + VS Code
 </div>
 
 ---
 
-# 二刀流
+# Visual Studio + VS Code
 
-## Visual Studio と VS CodeのW開発
+## Visual Studio と VS Codeの二刀流
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 <div class="bg-blue-50 p-4 rounded">
@@ -197,19 +191,19 @@ graph LR
 
 ---
 
-# AI Model
+# I ❤️ AI Model
 
 ## Anthropic is No.1
 
-- 初期のAgenticコーディングはGPTを使用
-- Github Copilotで選べるようになった**Claude Sonnet 3.5**がかなり良かった
-- その後様々なモデルを試すも、個人的にはずっとClaude Sonnetが最強
-- Visual Studio Code InsidersでCodexも試したが、個人的にはやっぱりClaude Sonnet
+- 初期のAIコーディングはGPTを使用していた
+- Github Copilotでモデルが選べるようになり**Claude Sonnet 3.5**がかなり良かった
+- その後様々なモデルを試すも、個人的にはずっとAnthropicが最強
+- CopilotライセンスでCodexが使えるようになり試したが、個人的にはやっぱりClaude Sonnet
 
 ## Claude Code
 
 - 使ってみたが日本語入力時の場所移動が嫌すぎる
-- Visual Studio Codeの公式ExtensionでGUI対応
+- VS Codeの公式ExtensionでGUI対応
 - 徐々にGitHub CopilotとClaude Codeの二刀流に
 
 ---
@@ -217,25 +211,29 @@ graph LR
 # Claude Code vs GitHub Copilot
 - どちらもClaude Sonnet 4.5ベースなので挙動は概ね近い
 - プロンプトを繰り返すと差はほぼ感じない
-- ただClaude Codeの方が**ファーストプロンプトの精度が顕著に高い**
-- Claude Code Proだったが、10回ほどでリミットが来るためMaxに課金した
+- ただClaude Codeの方が**初手のプロンプトの精度が顕著に高い**
+- Claude Code Proだったが、10回ほどでリミットが来たので遂にMaxに課金
+- その後ぐらいからVS CodeのClaude Code Extensionはずっと調子悪いw
+- PCのメモリを32MB→64MBで、ビックリするぐらい安定ww
 
 ---
 
-# ファーストプロンプト
+# 初手のプロンプト
 
 - AI開発で最初の１回はとても重要
-- Planモードで練り上げたプロンプトをAgentモードに投げるのが王道
+- Askモードで練り上げたプロンプトをAgentモードに投げるのが王道
 - 精度をさらに上げるにはClaude.mdやcopilot-instructions.mdの整備が重要
 - MCPも初回が一番コンテキストを把握してくれている印象
 - プロンプトを繰り返すほどコンテキストが薄れて忘れ去られる
+- Askモードからさらに特化型のPlanモードが搭載
 
 ---
 
 # Spec-Driven Development
 
+- 仕様（spec）をAIと共に作成し、それを唯一の基準としてコードを生成し検証していく開発スタイル
 - AIに初回でやってもらうにはSpecDDが相性が良い
-- まださわってないけれどKiroの基本コンセプト
+- まださわってないけれどKiroは仕様を構造化するのが基本スタイル
 - GitHubもSpec Kitを作っている
 - 日本発のcc-sddがよさげ
 
@@ -245,33 +243,30 @@ class: text-center
 ---
 
 <div class="text-6xl font-bold">
-並列開発
+AI Plan + AI Agent → AI Plan + Parallel AI Agent
 </div>
-<div class="text-3xl font-bold">
-VS Code(GitHub Copilot, Codex, Claude Code) × AI
-</div>
-<div class="text-3xl font-bold">
-Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
+<div class="text-3xl">
+Visual Studio + VS Code + Cursor
 </div>
 
 ---
 
-# 並列開発
+# AI並列開発
 
 ## 2025年11月
 
 - Agent中は別の事した方が効率的ではある。が、自分はマルチタスクがとても苦手
-- 仕事中に、ふと並列で出来たら効率的だなと思った瞬間があった
+- 仕事中に、ふと並列で出来たら効率的だなと思った
 - ちょうどCursor2.0で並列開発の機能が乗った
-- ある勉強会でAnthropic社員の基調講演でも並列開発の話になった
+- ある勉強会でAnthropicの基調講演でも並列開発の話になった
 - git worktree + tmuxがよさげ
 
 ---
 
 # git worktree
 
-- 並列開発するのであればブランチでは衝突するので複数リポジトリが想定される
-- 実際過去よく複数リポジトリ作って切り替えていたこともある
+- 並列開発ではブランチを切っても衝突するので複数リポジトリが理想
+- 実際過去複数リポジトリをクローンして切り替えていたこともある
 - ただ数分だけSSDも圧迫するし、管理も間違えやすい
 - もっといい機能がgitにあるんじゃない？→それがgit worktree。
 - 好きな別フォルダに全コピーされ、.gitは元と共有。
@@ -279,11 +274,11 @@ Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
 
 ---
 
-# 実験その１　Visual Studio Code Insiders
+# 実験その１　VS Codeでマルチモデル
 
 - Codex, Claude Code, GitHub Copilotに全く同じ作業を振ってみた
 - フォルダだけ作ってその下に作ってもらうように指示
-- 3つのチャットを読んでいくだけでも結構脳の負荷が高い
+- 3つのチャットを順番に読んでいくだけでも結構脳の負荷が高く疲れた。。
 
 <img src="/image.png" style="max-width: 80%; max-height: 340px; margin: 0 auto; display: block;" />
 
@@ -291,35 +286,34 @@ Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
 
 # 実験その2　Cursor並列開発マルチモデル
 
-- CursorでClaude Code, GPT5-codex, Composeで並列開発
+- CursorでClaude Code, GPT5-codexで並列開発
 - Claude Code×4は正直殆ど変わらないのであんまり。
-- 各worktreeの比較が難しい
-- 現状はVisual Studioで一つずつ確認
-- なるべく実行出来る所まで作ってもらって結果だけ見るのが良い
-- UI未確定時とかにたまに使っている
+- worktreeはgit管理下にない設定ファイルは付いてこない。ただ元リポジトリはある。プロンプト次第
+- なるべく1手で完了までいって実行してもらうのが理想。これもプロンプト次第
+- Cursorでは差分が見にくいし各worktreeの比較が難しい。
+- 現状はVisual Studioで一つずつ確認している
+- UI未確定時とかで色んなパターンを見たい時には結構良い
 
 ---
 
-# 並列の可能性
+# 並列開発の可能性
 
 - 並列開発は特定のフェーズで沢山、色んなパターンで確認したい場合は特に使いやすい
-- 現状は4個程度だが、並列数はもっとあげられるはず。そうなると突然変異も生まれるらしい
-- 各worktreeが必ず実行まで行ってくれるようになるれば確認だけで良くなる
+- 現状は4-8個程度だが、並列数はもっとあげられるはず。そうなると突然変異も生まれるらしい
 - さらに充実していけば大量のサムネイルから一目見て選ぶABテスト的な1-100テストも可能
-- 並列にはキャラ付けや役割付けなども出来る。そのうちレビューやジャッジもAIがやり出すとか
-- その中で1000並列、10000並列と増えていけば人間は太刀打ちできない
+- 並列にはキャラ付けや役割付けなども出来る。そのうちレビューもAIがやり出す
+- その中で100並列、1000並列とさらに増えていけば人間は太刀打ちできない
 
 ---
 
 # 面白そうな技術
 
 - GitHub Copilot Coding Agent  
-  - 個人的にはAgentモードよりもさらに好きじゃない
-  - やることがレビューだけになる
-  - ただいくらでも並列に出来る
+  - 個人的にはAgentモードよりもさらに好きじゃない。やることがレビューだけになる
+  - ただいくらでも並列に出来る。自分が仕事していない時間に働いてもらえる
 - LLM-as-a-Judge
   - LLMをLLMで評価する仕組み　　
-  - 結局良し悪しは個人の好みになりがちなのでAIに判断してもらう
+  - 結局AIの良し悪しは個人の好みになりがちなので、評価もAIに判断してもらう
   - 並列開発でやりたいことは結局結果の確認
 - KAMUI
   - Multi-Agent AI OS
@@ -328,38 +322,44 @@ Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
 
 ---
 
-# まとめ：開発スタイルの進化
+# まとめ：AI開発スタイルの進化
 
-## 3つのフェーズ
+<div class="grid grid-cols-4 gap-2 mt-4 text-sm">
+<div class="bg-gray-100 p-3 rounded">
 
-<div class="grid grid-cols-3 gap-2 mt-4 text-sm">
-<div class="bg-gray-100 p-4 rounded">
+### Phase 0
+**今までの開発**
+- 2006-2024
+- Visual Studio
+- Iは一人。IDE最強。
+
+</div>
+<div class="bg-yellow-100 p-3 rounded">
 
 ### Phase 1
-**Visual Studio一筋**
-- 2006-2024
-- IDEこそ正義
+**AIサポート開発**
+- 2025年2月
+- Visual Studio+Askモード
+- AIは質問相手
 
 </div>
-<div class="bg-blue-100 p-4 rounded">
+<div class="bg-blue-100 p-3 rounded">
 
 ### Phase 2
-**Visual Studio+VS CodeのW体制**
-- 2025年5月
-- VS Code Agent + Visual Studio
-- AIとのペアプロ
+**AIペアプロ開発**
+- 2025年6月
+- Visual Studio+VS Code+Agentモード
+- AIはペアプロ相手
 
 </div>
-<div class="bg-green-100 p-4 rounded">
+<div class="bg-green-100 p-3 rounded">
 
 ### Phase 3
-**並列開発**
+**AI並列開発**
 
 - 2025年11月
-- VS Code(GitHub Copilot, Claude Code),
-- VsCode Insider(GitHub Copilot, Codex, Claude Code), 
-- Cursor(Claude Code, GPT5.1 Codex Hight)
-- まだスタイルは模索中
+- Visual Studio+VS Code+Cursor+並列Agent
+- AIは複数の部下
 
 </div>
 </div>
@@ -374,10 +374,11 @@ Cursor(Claude Code x 4, GPT5.1 Codex Hight x 4)  × AI
 
 ---
 
-# Visual Studio 2026’s Agent ♡
+# Visual Studio 2026’s Agent ❤️
 
 - 先週Visual Studio2026でのAgentモード再検証
 - Claude Code > VS Code > Visual Studio
+- 劣る部分もあるが正直使うに値するレベル！！
 - コード、差分、ビルドなどやっぱりIDEの方が優れていると思う点もある
 - 帰ってきた我が愛人
 
