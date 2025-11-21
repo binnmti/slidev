@@ -225,17 +225,7 @@ graph LR
 - 精度をさらに上げるにはClaude.mdやcopilot-instructions.mdの整備が重要
 - MCPも初回が一番コンテキストを把握してくれている印象
 - プロンプトを繰り返すほどコンテキストが薄れて忘れ去られる
-- Askモードからさらに特化型のPlanモードが搭載
-
----
-
-# Spec-Driven Development
-
-- 仕様（spec）をAIと共に作成し、それを唯一の基準としてコードを生成し検証していく開発スタイル
-- AIに初回でやってもらうにはSpecDDが相性が良い
-- まださわってないけれどKiroは仕様を構造化するのが基本スタイル
-- GitHubもSpec Kitを作っている
-- 日本発のcc-sddがよさげ
+- 徐々にモード切替も面倒でプロンプトをそういう風に頼むことが増えた
 
 ---
 layout: center
@@ -280,8 +270,6 @@ Visual Studio + VS Code + Cursor
 - フォルダだけ作ってその下に作ってもらうように指示
 - 3つのチャットを順番に読んでいくだけでも結構脳の負荷が高く疲れた。。
 
-<img src="/image.png" style="max-width: 80%; max-height: 340px; margin: 0 auto; display: block;" />
-
 ---
 
 # 実験その2　Cursor並列開発マルチモデル
@@ -296,18 +284,6 @@ Visual Studio + VS Code + Cursor
 
 ---
 
-# 実験その3　オリジナル並列開発マルチモデル
-
-- Cursorで今からやることをやろうとしたら上限来てたｗ。。。
-- 先ずはClaude CodeのPlanモードで内容を詰める。詰まった内容はmdで出力する。
-- VS CodeでCodex->GPT-5.1-Codex-Max, Claude Code->Sonnet 4.5(Opusにすれば良かった), GitHub Copilot->Gemini3.0で並列開発
-- それぞれにworktreeを作ってと頼んで実行までやってくれと頼む
-- 因みにGemini3.0はいきなり無視してworktreeを作らなかったｗ。
-- 個人的な見解ではClaude Codeの勝利
-- マージが上手くいかず結局手でコピーした。。
-
----
-
 # 並列開発の可能性
 
 - 並列開発は特定のフェーズで沢山、色んなパターンで確認したい場合は特に使いやすい
@@ -318,7 +294,7 @@ Visual Studio + VS Code + Cursor
 
 ---
 
-# 面白そうな技術
+# 並列で面白そうな技術
 
 - GitHub Copilot Coding Agent  
   - 個人的にはAgentモードよりもさらに好きじゃない。やることがレビューだけになる
@@ -331,6 +307,37 @@ Visual Studio + VS Code + Cursor
   - Multi-Agent AI OS
   - 既に100並列も検討中
   - 今後は1000並列の使い方も議論中
+
+---
+
+# 並列に使えそうな技術
+
+- Spec-Driven Development
+  - 仕様（spec）をAIと共に作成し、それを唯一の基準としてコードを生成し検証していく開発スタイル
+  - まださわってないけれどKiroは仕様を構造化するのが基本スタイル
+  - GitHubもSpec Kitを作っている
+  - 日本発のcc-sddがよさげ
+  - AIに初回でやってもらうにはSpecDDが相性が良い
+
+- Planモード
+  - 基本ファイル操作をせずにプランを作ることに特化したモード
+  - CopilotのAskモードは意味通り質問をするモード
+  - VS CodeのCopilotにもつい最近Planモードができた
+  - Claude Codeにもある
+
+---
+
+# 昨日時点での開発スタイル
+
+- Cursorで今からやることをやろうとしたら上限来てたｗ。。。
+- 先ずはClaude CodeのPlanモードで内容を詰める。詰まった内容はmdで出力する。
+- VS CodeでCodex->GPT-5.1-Codex-Max, Claude Code->Sonnet 4.5(Opusにすれば良かった), GitHub Copilot->Gemini3.0で並列開発
+- それぞれにworktreeを作ってと頼んで実行までやってくれと頼む
+- 因みにGemini3.0はいきなり無視してworktreeを作らなかったｗ。
+- 個人的な見解ではClaude Codeの勝利
+- マージが上手くいかず結局手でコピーした。。
+- 並列はまだ模索中で色々やっている
+- 常に並列ではなくバグ修正とか簡単な機能追加は即Agentもよくある
 
 ---
 
@@ -376,21 +383,27 @@ Visual Studio + VS Code + Cursor
 </div>
 </div>
 
+- ※特筆すべきはAIは全て今年の話。
+
+---
+layout: center
+class: text-center
 ---
 
-# 最重要補足
-
-- 今までのVisual StudioのAgentモード
-- 数カ月に１回程度試してほんのマシになってもずっとイマイチ
-- Claude Code > VS Code >>>>>>>>>>>>>>>> Visual Studio（論外）
+<div class="text-6xl font-bold">
+最重要補足
+</div>
 
 ---
 
 # Visual Studio 2026’s Agent ❤️
 
+- 今までのVisual StudioのAgentモード
+- 数カ月に１回程度試してほんのマシになってもずっとイマイチ
+- Claude Code > VS Code >>>>>>>>>>>>>>>> Visual Studio（論外）
 - 先週Visual Studio2026でのAgentモード再検証
-- Claude Code > VS Code > Visual Studio
 - 劣る部分もあるが正直使うに値するレベル！！
 - コード、差分、ビルドなどやっぱりIDEの方が優れていると思う点もある
+- Claude Code > VS Code > Visual Studio
 - 帰ってきた我が愛人
 
